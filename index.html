@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .typing::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .glow {
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glowEffect 3s infinite alternate;
+        }
+        @keyframes glowEffect {
+            from { text-shadow: 0 0 5px #00c6ff; }
+            to { text-shadow: 0 0 20px #0072ff; }
+        }
+        /* Glow Hover Effect */
+        .glow-hover:hover {
+            box-shadow: 0 0 10px rgba(0, 114, 255, 0.8);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("nav a").forEach(anchor => {
+                anchor.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+            
+            const fadeElements = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Typing effect
+            const nameElement = document.querySelector(".typing");
+            const nameText = "Muhammad Rendi Alfaris";
+            let index = 0;
+            function typeWriter() {
+                if (index < nameText.length) {
+                    nameElement.textContent += nameText.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            typeWriter();
+        });
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="p-5 bg-gray-800 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">My Portfolio</h1>
+        <ul class="flex space-x-4">
+            <li><a href="#about" class="hover:text-gray-400">About</a></li>
+            <li><a href="#skills" class="hover:text-gray-400">Skills</a></li>
+            <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
+            <li><a href="#inspirations" class="hover:text-gray-400">Inspirations & Interests</a></li>
+            <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+        </ul>
+        <a href="cv.pdf" download class="ml-4 bg-blue-600 px-4 py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+            📄 Download CV
+        </a>
+    </nav>
+    
+    </nav>
+    
+    
+    <section class="h-screen flex flex-col items-center justify-center text-center">
+        <img src="profile.jpg" alt="Profile Picture" class="w-40 h-40 rounded-full mb-4 object-cover">
+        <h2 class="text-5xl font-bold">Hello, I'm <span class="glow typing"></span></h2>
+        <p class="text-gray-400 mt-3 text-lg">Web Developer | UI/UX Designer | Electrical Engineering | Instrumentation and Automation Engineering</p>
+    </section>
+    
+    <section id="about" class="p-10 text-center fade-in">
+        <h3 class="text-3xl font-semibold">About Me</h3>
+        <p class="text-gray-400 mt-3 max-w-xl mx-auto">I am currently in the process of learning and growing as a developer. Every day, I strive to improve my programming skills and explore new technologies. My goal is to become proficient in multiple programming languages and build impactful projects.</p>
+    </section>
+    
+    <section id="skills" class="p-10 text-center bg-gray-800 fade-in">
+        <h3 class="text-3xl font-semibold">Skills</h3>
+        <div class="mt-5 flex justify-center space-x-6">
+            <div class="flex flex-col items-center transform transition hover:scale-110">
+                <img src="html-logo.png" alt="HTML" class="w-16 h-16 mb-2">
+                <span class="bg-red-600 px-4 py-2 rounded-lg text-lg">HTML</span>
+            </div>
+            <div class="flex flex-col items-center transform transition hover:scale-110">
+                <img src="css-logo.png" alt="CSS" class="w-16 h-16 mb-2">
+                <span class="bg-blue-600 px-4 py-2 rounded-lg text-lg">CSS</span>
+            </div>
+            <div class="flex flex-col items-center transform transition hover:scale-110">
+                <img src="python-logo.png" alt="Python" class="w-16 h-16 mb-2">
+                <span class="bg-yellow-600 px-4 py-2 rounded-lg text-lg">Python</span>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="p-10 text-center fade-in">
+        <h3 class="text-3xl font-semibold">Projects</h3>
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-gray-800 p-5 rounded-lg transition transform hover:-translate-y-2 hover:bg-gray-700">
+                <h4 class="text-xl font-bold">Voice Assistant with Python (Jarvis-style AI)</h4>
+                <p class="text-gray-400"> Build a Python-based voice assistant with speech recognition that can respond to specific commands, such as playing music or videos.
+                    Technologies: Python, Speech Recognition, Text-to-Speech, OpenAI API</p>
+            </div>
+            <div class="bg-gray-800 p-5 rounded-lg transition transform hover:-translate-y-2 hover:bg-gray-700">
+                <h4 class="text-xl font-bold">Portfolio Website </h4>
+                <p class="text-gray-400">Elegant and minimalist personal portfolio website using Tailwind CSS and JavaScript for interactive animations.
+                    Technologies: HTML, CSS, Tailwind CSS, JavaScript.</p>
+            </div>
+            <div class="bg-gray-800 p-5 rounded-lg transition transform hover:-translate-y-2 hover:bg-gray-700"">
+                <h4 class="text-xl font-bold">Ultrasonic Measurement System with Arduino</h4>
+                <p class="text-gray-400">Developing an ultrasonic measurement system using Arduino for distance or object detection purp</p>
+            </div>
+        </div>
+    </section>
+
+<section id="inspirations" class="p-10 text-center bg-gray-800 fade-in">
+    <h3 class="text-3xl font-semibold">Inspirations & Interests</h3>
+    <p class="text-gray-400 mt-3 max-w-xl mx-auto">
+        I am passionate about technology and always eager to explore new innovations.  
+        Here are some of the things that inspire me in my journey:
+    </p>
+    <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-700 p-5 rounded-lg transition hover:scale-105">
+            <h4 class="text-xl font-bold">Artificial Intelligence</h4>
+            <p class="text-gray-400 text-sm">I am fascinated by AI and how it can transform our daily lives.</p>
+        </div>
+        <div class="bg-gray-700 p-5 rounded-lg transition hover:scale-105">
+            <h4 class="text-xl font-bold">Web Development</h4>
+            <p class="text-gray-400 text-sm">Creating interactive and user-friendly web applications excites me.</p>
+        </div>
+        <div class="bg-gray-700 p-5 rounded-lg transition hover:scale-105">
+            <h4 class="text-xl font-bold">Arduino & IoT</h4>
+            <p class="text-gray-400 text-sm">I love experimenting with sensors and automation using Arduino.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="contact" class="p-10 flex justify-center fade-in">
+    <div class="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-lg text-white text-center">
+        <h3 class="text-3xl font-semibold mb-4">Contact Me</h3>
+        <p class="text-gray-300 text-lg mb-6">Feel free to reach out!</p>
+        
+        <div class="space-y-5">
+            <p class="text-lg flex items-center justify-center space-x-3">
+                <img src="email-icon.png" alt="Email" class="icon w-8 h-8 transition-transform duration-300 ease-in-out">
+                <a href="mailto:muhammadrendialfaris20@gmail.com" class="contact-link text-animated">
+                   <span class="hover:text-blue-400 transition-colors duration-300">muhammadrendialfaris20@gmail.com</span>
+                  
+                </a>
+            </p>
+            <p class="text-lg flex items-center justify-center space-x-3">
+                <img src="tiktok-icon.png" alt="TikTok" class="icon w-8 h-8 transition-transform duration-300 ease-in-out">
+                <a href="https://www.tiktok.com/@rndialfris" target="_blank" class="contact-link text-animated">
+                   <span class="hover:text-blue-400 transition-colors duration-300">rndialfris</span>
+                   
+                </a>
+            </p>
+            <p class="text-lg flex items-center justify-center space-x-3">
+                <img src="instagram-icon.png" alt="Instagram" class="icon w-8 h-8 transition-transform duration-300 ease-in-out">
+                <a href="https://www.instagram.com/rndialfris" target="_blank" class="contact-link text-animated">
+                   <span class="hover:text-blue-400 transition-colors duration-300">rndialfris</span>
+                  
+                </a>
+            </p>
+        </div>
+
+        <!-- Formulir Kontak -->
+        <form class="mt-6 space-y-4">
+            <input type="text" placeholder="Your Name" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
+            <input type="email" placeholder="Your Email" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
+            <textarea placeholder="Your Message" class="p-2 rounded-lg w-full bg-gray-700 text-white" rows="4" required></textarea>
+            <button type="submit" class="bg-blue-600 px-4 py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+<style>
+    .icon {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+    }
+
+    .icon:hover {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+
+    .icon:active {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+
+    .contact-link {
+        transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+        color: white;
+        opacity: 0.8;
+    }
+
+    .contact-link:hover .icon {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+
+    .contact-link:hover span {
+        color: #00c6ff; /* Warna teks saat hover */
+    }
+
+    .text-animated {
+        transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+        opacity: 0.8;
+    }
+
+    .text-animated:hover {
+        color: #00c6ff;
+        opacity: 1;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Section</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link ke file CSS Anda -->
+    <style>
+        .thank-you-text {
+            display: inline-block; /* Agar animasi transformasi berfungsi dengan baik */
+            transition: color 0.5s ease-in-out, transform 0.5s ease-in-out; /* Transisi untuk warna dan transformasi */
+        }
+
+        .thank-you-text:hover {
+            color: #00c6ff; /* Warna saat hover */
+            transform: scale(1.1); /* Membesarkan teks saat hover */
+            text-shadow: 0 0 20px rgba(0, 198, 255, 0.7); /* Efek cahaya */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section id="thank-you" class="p-10 text-center fade-in">
+            <h3 class="text-3xl font-semibold">Thank You for Visiting!</h3>
+            <p class="text-gray-400 mt-3 text-lg">I appreciate your time exploring my portfolio. Feel free to connect with me!</p>
+            <div class="mt-5">
+                <span class="thank-you-text text-4xl font-bold cursor-pointer">
+                    Stay Inspired & Keep Building! 🚀
+                </span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
