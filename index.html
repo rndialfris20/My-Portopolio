@@ -178,6 +178,14 @@
     </section>
     
     <!-- Script untuk efek mengetik -->
+    <section class="h-screen flex flex-col items-center justify-center text-center">
+        <img src="profile.jpg" alt="Profile Picture" class="w-40 h-40 rounded-full mb-4 object-cover md:w-48 md:h-48">
+        <h2 class="text-3xl font-bold sm:text-2xl">
+            Hello, I'm <span id="typing" class="text-blue-400"></span><span class="cursor">|</span>
+        </h2>
+    </section>
+    
+    <!-- Script untuk efek mengetik -->
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const textElement = document.getElementById("typing");
@@ -187,7 +195,7 @@
             "a Web Developer",
             "a UI/UX Designer",
             "an Automation Engineer",
-            "an Instrumentation Engineer",
+            "an Instrumentation Engineer"
         ];
         let wordIndex = 0;
         let charIndex = 0;
@@ -222,7 +230,7 @@
     });
     </script>
     
-    <!-- CSS untuk efek kursor -->
+    <!-- CSS untuk efek kursor dan ukuran teks -->
     <style>
     .cursor {
         font-weight: bold;
@@ -234,7 +242,19 @@
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
     }
+    
+    /* Ukuran teks lebih kecil */
+    #typing {
+        font-size: 1.5rem; /* Ukuran teks lebih kecil */
+    }
+    
+    @media (max-width: 640px) {
+        #typing {
+            font-size: 1.25rem; /* Lebih kecil untuk layar kecil */
+        }
+    }
     </style>
+    
     
     
 
