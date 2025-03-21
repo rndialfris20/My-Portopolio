@@ -78,6 +78,18 @@
                 height: 24px;
             }
         }
+
+        /* Fix for hover overflow */
+        .hover-effect {
+            overflow: hidden;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -165,17 +177,17 @@
     <section id="projects" class="p-10 text-center fade-in">
         <h3 class="text-3xl font-semibold">Projects</h3>
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-gray-800 p-5 rounded-lg transition transform hover:-translate-y-2 hover:bg-gray-700">
+            <div class="bg-gray-800 p-5 rounded-lg hover-effect">
                 <h4 class="text-xl font-bold">Voice Assistant with Python (Jarvis-style AI)</h4>
-                <p class="text-gray-400">Build a Python-based voice assistant with speech recognition that can respond to specific commands, such as playing music or videos. Technologies: Python, Speech Recognition, Text-to-Speech, OpenAI API</p>
+                <p class="text-gray-400 mt-2">Build a Python-based voice assistant with speech recognition that can respond to specific commands, such as playing music or videos. Technologies: Python, Speech Recognition, Text-to-Speech, OpenAI API</p>
             </div>
-            <div class="bg-gray-800 p-5 rounded-lg transition transform hover:-translate-y-2 hover:bg-gray-700">
+            <div class="bg-gray-800 p-5 rounded-lg hover-effect">
                 <h4 class="text-xl font-bold">Portfolio Website</h4>
-                <p class="text-gray-400">Elegant and minimalist personal portfolio website using Tailwind CSS and JavaScript for interactive animations. Technologies: HTML, CSS, Tailwind CSS, JavaScript.</p>
+                <p class="text-gray-400 mt-2">Elegant and minimalist personal portfolio website using Tailwind CSS and JavaScript for interactive animations. Technologies: HTML, CSS, Tailwind CSS, JavaScript.</p>
             </div>
-            <div class="bg-gray-800 p-5 rounded-lg transition transform hover:-translate-y-2 hover:bg-gray-700">
+            <div class="bg-gray-800 p-5 rounded-lg hover-effect">
                 <h4 class="text-xl font-bold">Ultrasonic Measurement System with Arduino</h4>
-                <p class="text-gray-400">Developing an ultrasonic measurement system using Arduino for distance or object detection purposes.</p>
+                <p class="text-gray-400 mt-2">Developing an ultrasonic measurement system using Arduino for distance or object detection purposes.</p>
             </div>
         </div>
     </section>
@@ -184,15 +196,15 @@
         <h3 class="text-3xl font-semibold">Inspirations & Interests</h3>
         <p class="text-gray-400 mt-3 max-w-xl mx-auto">I am passionate about technology and always eager to explore new innovations. Here are some of the things that inspire me in my journey:</p>
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-gray-700 p-5 rounded-lg transition hover:scale-105">
+            <div class="bg-gray-700 p-5 rounded-lg hover-effect">
                 <h4 class="text-xl font-bold">Artificial Intelligence</h4>
                 <p class="text-gray-400 text-sm">I am fascinated by AI and how it can transform our daily lives.</p>
             </div>
-            <div class="bg-gray-700 p-5 rounded-lg transition hover:scale-105">
+            <div class="bg-gray-700 p-5 rounded-lg hover-effect">
                 <h4 class="text-xl font-bold">Web Development</h4>
                 <p class="text-gray-400 text-sm">Creating interactive and user-friendly web applications excites me.</p>
             </div>
-            <div class="bg-gray-700 p-5 rounded-lg transition hover:scale-105">
+            <div class="bg-gray-700 p-5 rounded-lg hover-effect">
                 <h4 class="text-xl font-bold">Arduino & IoT</h4>
                 <p class="text-gray-400 text-sm">I love experimenting with sensors and automation using Arduino.</p>
             </div>
