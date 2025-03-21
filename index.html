@@ -170,18 +170,13 @@
     
     </nav>
     
+
+
     <section class="h-screen flex flex-col items-center justify-center text-center">
         <img src="profile.jpg" alt="Profile Picture" class="w-40 h-40 rounded-full mb-4 object-cover md:w-48 md:h-48">
-        <h2 class="text-5xl font-bold">
-            Hello, I'm <span id="typing" class="text-blue-400"></span><span class="cursor">|</span>
-        </h2>
-    </section>
-    
-    <!-- Script untuk efek mengetik -->
-    <section class="h-screen flex flex-col items-center justify-center text-center">
-        <img src="profile.jpg" alt="Profile Picture" class="w-40 h-40 rounded-full mb-4 object-cover md:w-48 md:h-48">
-        <h2 class="text-3xl font-bold sm:text-2xl">
-            Hello, I'm <span id="typing" class="text-blue-400"></span><span class="cursor">|</span>
+        <h2 class="font-bold sm:text-3xl">
+            <span id="hello" class="text-white">Hello, I'm </span>
+            <span id="typing" class="text-blue-400"></span><span class="cursor">|</span>
         </h2>
     </section>
     
@@ -189,6 +184,7 @@
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const textElement = document.getElementById("typing");
+        const helloElement = document.getElementById("hello");
         const words = [
             "Muhammad Rendi Alfaris",
             "an Electrical Engineer",
@@ -205,6 +201,10 @@
             let currentWord = words[wordIndex];
             let displayText = currentWord.substring(0, charIndex);
             textElement.textContent = displayText;
+    
+            // Ukuran teks "Hello, I'm" dibuat lebih kecil dari teks yang diketik
+            helloElement.style.fontSize = "1.5rem";  // Lebih kecil dari teks yang diketik
+            helloElement.style.fontWeight = "normal"; // Tidak terlalu tebal
     
             if (!isDeleting) {
                 if (charIndex < currentWord.length) {
@@ -243,21 +243,30 @@
         50% { opacity: 0; }
     }
     
-    /* Ukuran teks lebih kecil */
+    /* Ukuran teks biru lebih kecil */
     #typing {
-        font-size: 1.5rem; /* Ukuran teks lebih kecil */
+        font-size: 2rem; /* Sedikit lebih kecil */
+        font-weight: bold;
+    }
+    
+    /* Ukuran lebih kecil untuk "Hello, I'm" */
+    #hello {
+        font-size: 1.5rem; /* Ukuran lebih kecil */
+        font-weight: normal;
     }
     
     @media (max-width: 640px) {
         #typing {
-            font-size: 1.25rem; /* Lebih kecil untuk layar kecil */
+            font-size: 1.75rem; /* Lebih kecil di HP */
+        }
+        #hello {
+            font-size: 1.3rem; /* Lebih kecil di HP */
         }
     }
     </style>
     
     
     
-
     <section id="about" class="p-10 text-center fade-in">
         <h3 class="text-3xl font-semibold">About Me</h3>
         <p class="text-gray-400 mt-3 max-w-xl mx-auto">
