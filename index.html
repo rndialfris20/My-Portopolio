@@ -131,18 +131,43 @@
     </script>
 </head>
 <body class="bg-gray-900 text-white">
-    <nav class="p-3 bg-gray-800 flex flex-col md:flex-row justify-between items-center">
-        <h1 class="text-xl font-bold">My Portfolio</h1>
-        <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
-            <li><a href="#about" class="hover:text-gray-400 text-sm md:text-base">About</a></li>
-            <li><a href="#skills" class="hover:text-gray-400 text-sm md:text-base">Skills</a></li>
-            <li><a href="#projects" class="hover:text-gray-400 text-sm md:text-base">Projects</a></li>
-            <li><a href="#inspirations" class="hover:text-gray-400 text-sm md:text-base">Inspirations & Interests</a></li>
-            <li><a href="#contact" class="hover:text-gray-400 text-sm md:text-base">Contact</a></li>
-        </ul>
-        <a href="cv.pdf" download="Muhammad_Rendi_Alfaris_CV.pdf" class="mt-2 md:mt-0 bg-blue-600 px-3 py-1 rounded-lg text-sm md:text-lg font-semibold hover:bg-blue-700 transition">
-            📄 Download CV
-        </a>
+    <header class="bg-gray-900 text-white p-4 fixed w-full top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">My Portfolio</h1>
+            <nav>
+                <ul class="hidden md:flex space-x-6 text-lg">
+                    <li><a href="#about" class="hover:text-gray-400">About</a></li>
+                    <li><a href="#skills" class="hover:text-gray-400">Skills</a></li>
+                    <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                </ul>
+                <!-- Tombol Menu untuk HP -->
+                <button id="menu-btn" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </nav>
+        </div>
+        <!-- Menu dropdown untuk HP -->
+        <div id="menu" class="hidden flex flex-col bg-gray-800 p-4 absolute top-16 right-4 rounded-lg shadow-md w-48">
+            <a href="#about" class="py-2 hover:text-gray-400">About</a>
+            <a href="#skills" class="py-2 hover:text-gray-400">Skills</a>
+            <a href="#projects" class="py-2 hover:text-gray-400">Projects</a>
+            <a href="#contact" class="py-2 hover:text-gray-400">Contact</a>
+        </div>
+    </header>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    
+    
     </nav>
     
     <section class="h-screen flex flex-col items-center justify-center text-center">
@@ -155,24 +180,35 @@
         <h3 class="text-3xl font-semibold">About Me</h3>
         <p class="text-gray-400 mt-3 max-w-xl mx-auto">I am currently in the process of learning and growing as a developer. Every day, I strive to improve my programming skills and explore new technologies. My goal is to become proficient in multiple programming languages and build impactful projects.</p>
     </section>
+    <section id="about" class="p-10 text-center fade-in">
+        <h3 class="text-3xl font-semibold">About Me</h3>
+        <p class="text-gray-400 mt-3 max-w-xl mx-auto">
+            I am currently in the process of learning and growing as a developer. Every day, I strive to improve my programming skills and explore new technologies. My goal is to become proficient in multiple programming languages and build impactful projects.
+        </p>
+        <a href="CV.jpg" download="Muhammad_Rendi_Alfaris_CV.pdf" class="mt-4 inline-block bg-blue-600 px-4 py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+            📄 Download CV
+        </a>
+    </section>
+    
     
     <section id="skills" class="p-10 text-center bg-gray-800 fade-in">
         <h3 class="text-3xl font-semibold">Skills</h3>
-        <div class="mt-5 flex flex-col md:flex-row justify-center space-x-0 md:space-x-6">
-            <div class="flex flex-col items-center transform transition hover:scale-110 mb-4 md:mb-0">
+        <div class="mt-5 flex flex-wrap justify-center gap-6">
+            <div class="flex flex-col items-center transform transition hover:scale-110">
                 <img src="html-logo.png" alt="HTML" class="w-16 h-16 mb-2">
                 <span class="bg-red-600 px-4 py-2 rounded-lg text-lg">HTML</span>
             </div>
-            <div class="flex flex-col items-center transform transition hover:scale-110 mb-4 md:mb-0">
+            <div class="flex flex-col items-center transform transition hover:scale-110">
                 <img src="css-logo.png" alt="CSS" class="w-16 h-16 mb-2">
                 <span class="bg-blue-600 px-4 py-2 rounded-lg text-lg">CSS</span>
             </div>
-            <div class="flex flex-col items-center transform transition hover:scale-110 mb-4 md:mb-0">
+            <div class="flex flex-col items-center transform transition hover:scale-110">
                 <img src="python-logo.png" alt="Python" class="w-16 h-16 mb-2">
                 <span class="bg-yellow-600 px-4 py-2 rounded-lg text-lg">Python</span>
             </div>
         </div>
     </section>
+    
     
     <section id="projects" class="p-10 text-center fade-in">
         <h3 class="text-3xl font-semibold">Projects</h3>
@@ -215,39 +251,47 @@
         <div class="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-lg text-white text-center">
             <h3 class="text-3xl font-semibold mb-4">Contact Me</h3>
             <p class="text-gray-300 text-lg mb-6">Feel free to reach out!</p>
-            
+    
             <div class="space-y-5">
-                <p class="text-lg flex items-center justify-center space-x-3">
-                    <img src="email-icon.png" alt="Email" class="icon w-8 h-8 transition-transform duration-300 ease-in-out">
+                <p class="text-lg sm:text-sm flex items-center justify-center space-x-3">
+                    <img src="email-icon.png" alt="Email" class="icon w-7 h-7 transition-transform duration-300 ease-in-out">
                     <a href="mailto:muhammadrendialfaris20@gmail.com" class="contact-link text-animated">
-                       <span class="hover:text-blue-400 transition-colors duration-300">muhammadrendialfaris20@gmail.com</span>
+                        <span class="hover:text-blue-400 transition-colors duration-300">muhammadrendialfaris20@gmail.com</span>
                     </a>
                 </p>
-                <p class="text-lg flex items-center justify-center space-x-3">
-                    <img src="tiktok-icon.png" alt="TikTok" class="icon w-8 h-8 transition-transform duration-300 ease-in-out">
+                <p class="text-lg sm:text-sm flex items-center justify-center space-x-3">
+                    <img src="tiktok-icon.png" alt="TikTok" class="icon w-7 h-7 transition-transform duration-300 ease-in-out">
                     <a href="https://www.tiktok.com/@rndialfris" target="_blank" class="contact-link text-animated">
-                       <span class="hover:text-blue-400 transition-colors duration-300">rndialfris</span>
+                        <span class="hover:text-blue-400 transition-colors duration-300">@rndialfris</span>
                     </a>
                 </p>
-                <p class="text-lg flex items-center justify-center space-x-3">
-                    <img src="instagram-icon.png" alt="Instagram" class="icon w-8 h-8 transition-transform duration-300 ease-in-out">
+                <p class="text-lg sm:text-sm flex items-center justify-center space-x-3">
+                    <img src="instagram-icon.png" alt="Instagram" class="icon w-7 h-7 transition-transform duration-300 ease-in-out">
                     <a href="https://www.instagram.com/rndialfris" target="_blank" class="contact-link text-animated">
-                       <span class="hover:text-blue-400 transition-colors duration-300">rndialfris</span>
+                        <span class="hover:text-blue-400 transition-colors duration-300">@rndialfris</span>
                     </a>
                 </p>
             </div>
-
-            <!-- Contact Form -->
-            <form class="mt-6 space-y-4">
-                <input type="text" placeholder="Your Name" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
-                <input type="email" placeholder="Your Email" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
-                <textarea placeholder="Your Message" class="p-2 rounded-lg w-full bg-gray-700 text-white" rows="4" required></textarea>
-                <button type="submit" class="bg-blue-600 px-4 py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
-                    Send Message
-                </button>
-            </form>
         </div>
     </section>
+    
+
+    <form class="mt-4 space-y-3 max-w-sm mx-auto">
+        <input type="text" placeholder="Name" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
+        <input type="email" placeholder="Email" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
+        <textarea placeholder="Message" class="p-2 rounded-lg w-full bg-gray-700 text-white resize-none" rows="3" required></textarea>
+        
+        <div class="flex justify-center">
+            <button type="submit" class="bg-blue-600 px-4 py-2 rounded-lg text-base font-medium text-white transition 
+            transform hover:scale-105 hover:shadow-lg hover:bg-blue-700">
+                Send
+            </button>
+        </div>
+    </form>
+    
+    
+            
+
 
     <style>
         .icon {
