@@ -172,98 +172,99 @@
     
 
 
-    <section class="h-screen flex flex-col items-center justify-center text-center">
-        <img src="profile.jpg" alt="Profile Picture" class="w-40 h-40 rounded-full mb-4 object-cover md:w-48 md:h-48">
-        <h2 class="font-bold sm:text-3xl">
-            <span id="hello" class="text-white">Hello, I'm </span>
-            <span id="typing" class="text-blue-400"></span><span class="cursor">|</span>
-        </h2>
-    </section>
-    
-    <!-- Script untuk efek mengetik -->
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const textElement = document.getElementById("typing");
-        const helloElement = document.getElementById("hello");
-        const words = [
-            "Muhammad Rendi Alfaris",
-            "an Electrical Engineer",
-            "a Web Developer",
-            "a UI/UX Designer",
-            "an Automation Engineer",
-            "an Instrumentation Engineer"
-        ];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-    
-        function typeEffect() {
-            let currentWord = words[wordIndex];
-            let displayText = currentWord.substring(0, charIndex);
-            textElement.textContent = displayText;
-    
-            // Ukuran teks "Hello, I'm" dibuat lebih kecil dari teks yang diketik
-            helloElement.style.fontSize = "1.5rem";  // Lebih kecil dari teks yang diketik
-            helloElement.style.fontWeight = "normal"; // Tidak terlalu tebal
-    
-            if (!isDeleting) {
-                if (charIndex < currentWord.length) {
-                    charIndex++;
-                    setTimeout(typeEffect, 100);
-                } else {
-                    isDeleting = true;
-                    setTimeout(typeEffect, 1000);
-                }
+  <section class="h-screen flex flex-col items-center justify-center text-center">
+    <img src="profile.jpg" alt="Profile Picture" class="w-32 h-32 rounded-full mb-3 object-cover md:w-40 md:h-40">
+    <h2 class="font-bold sm:text-2xl">
+        <span id="hello" class="text-white">Hello, I'm </span>
+        <span id="typing" class="text-blue-400"></span><span class="cursor">|</span>
+    </h2>
+</section>
+
+<!-- Script untuk efek mengetik -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const textElement = document.getElementById("typing");
+    const helloElement = document.getElementById("hello");
+    const words = [
+        "Muhammad Rendi Alfaris",
+        "an Electrical Engineer",
+        "a Web Developer",
+        "a UI/UX Designer",
+        "an Automation Engineer",
+        "an Instrumentation Engineer"
+    ];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        let currentWord = words[wordIndex];
+        let displayText = currentWord.substring(0, charIndex);
+        textElement.textContent = displayText;
+
+        // Ukuran teks "Hello, I'm" lebih kecil dari teks yang diketik
+        helloElement.style.fontSize = "1.3rem";  
+        helloElement.style.fontWeight = "normal"; 
+
+        if (!isDeleting) {
+            if (charIndex < currentWord.length) {
+                charIndex++;
+                setTimeout(typeEffect, 100);
             } else {
-                if (charIndex > 0) {
-                    charIndex--;
-                    setTimeout(typeEffect, 50);
-                } else {
-                    isDeleting = false;
-                    wordIndex = (wordIndex + 1) % words.length;
-                    setTimeout(typeEffect, 500);
-                }
+                isDeleting = true;
+                setTimeout(typeEffect, 1000);
+            }
+        } else {
+            if (charIndex > 0) {
+                charIndex--;
+                setTimeout(typeEffect, 50);
+            } else {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(typeEffect, 500);
             }
         }
-    
-        typeEffect();
-    });
-    </script>
-    
-    <!-- CSS untuk efek kursor dan ukuran teks -->
-    <style>
-    .cursor {
-        font-weight: bold;
-        display: inline-block;
-        animation: blink 0.7s infinite;
     }
-    
-    @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-    
-    /* Ukuran teks biru lebih kecil */
+
+    typeEffect();
+});
+</script>
+
+<!-- CSS untuk efek kursor dan ukuran teks -->
+<style>
+.cursor {
+    font-weight: bold;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Ukuran teks lebih kecil */
+#typing {
+    font-size: 1.2rem; /* Lebih kecil */
+    font-weight: bold;
+}
+
+/* Ukuran lebih kecil untuk "Hello, I'm" */
+#hello {
+    font-size: 1.2rem; /* Lebih kecil */
+    font-weight: normal;
+}
+
+@media (max-width: 640px) {
     #typing {
-        font-size: 2rem; /* Sedikit lebih kecil */
-        font-weight: bold;
+        font-size: 1.5rem; /* Lebih kecil di HP */
     }
-    
-    /* Ukuran lebih kecil untuk "Hello, I'm" */
     #hello {
-        font-size: 1.5rem; /* Ukuran lebih kecil */
-        font-weight: normal;
+        font-size: 1.1rem; /* Lebih kecil lagi di HP */
     }
-    
-    @media (max-width: 640px) {
-        #typing {
-            font-size: 1.75rem; /* Lebih kecil di HP */
-        }
-        #hello {
-            font-size: 1.3rem; /* Lebih kecil di HP */
-        }
-    }
-    </style>
+}
+</style>
+
     
     
     
