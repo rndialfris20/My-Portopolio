@@ -313,49 +313,136 @@ document.addEventListener("DOMContentLoaded", function () {
         font-size: 1.1rem; /* Lebih kecil lagi di HP */
     }
 }
+</style> 
+<section id="about" class="p-10 text-center fade-in">
+    <h3 class="text-3xl font-semibold">About Me</h3>
+    <p class="text-gray-400 mt-3 max-w-xl mx-auto">
+        I am currently in the process of learning and growing as a developer. Every day, I strive to improve my programming skills and explore new technologies. My goal is to become proficient in multiple programming languages and build impactful projects.
+    </p>
+    <style>
+    style>
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.7); /* Navbar transparan */
+        backdrop-filter: blur(10px);
+        border-radius: 0 0 10px 10px;
+        z-index: 1000;
+    }
+
+    .download-btn {
+        background-color: #2563eb; /* Warna biru */
+        color: white;
+        padding: 8px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        box-shadow: 0 3px 8px rgba(0, 102, 255, 0.4);
+        display: inline-block;
+    }
+
+    .download-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 12px rgba(0, 102, 255, 0.6);
+    }
 </style>
 
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="cv.pdf" download="Muhammad_Rendi_Alfaris_CV.pdf" class="download-btn">📄 Download CV</a>
+</nav>
     
-    
-    
-    <section id="about" class="p-10 text-center fade-in">
-        <h3 class="text-3xl font-semibold">About Me</h3>
-        <p class="text-gray-400 mt-3 max-w-xl mx-auto">
-            I am currently in the process of learning and growing as a developer. Every day, I strive to improve my programming skills and explore new technologies. My goal is to become proficient in multiple programming languages and build impactful projects.
-        </p>
-        <a href="cv.pdf" download="Muhammad_Rendi_Alfaris_CV.pdf" class="mt-4 inline-block bg-blue-600 px-4 py-2 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
-            📄 Download CV
-        </a>
-    </section>
-    
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+</section>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes glowing {
+        0% {
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
         }
-    </style>
-    
-    <section id="skills" class="p-10 text-center bg-gray-900 fade-in">
-        <h3 class="text-4xl font-bold text-white mb-6">Skills</h3>
-        <div class="mt-5 flex flex-wrap justify-center gap-8">
-            <div class="flex flex-col items-center transform transition hover:scale-110 p-4 rounded-lg bg-white/20 backdrop-blur-lg shadow-lg">
-                <img src="html-logo.png" alt="HTML" class="w-20 h-20 mb-3">
-                <span class="bg-red-400/80 px-6 py-3 rounded-lg text-lg text-white font-semibold shadow-md">HTML</span>
-            </div>
-            <div class="flex flex-col items-center transform transition hover:scale-110 p-4 rounded-lg bg-white/20 backdrop-blur-lg shadow-lg">
-                <img src="css-logo.png" alt="CSS" class="w-20 h-20 mb-3">
-                <span class="bg-blue-400/80 px-6 py-3 rounded-lg text-lg text-white font-semibold shadow-md">CSS</span>
-            </div>
-            <div class="flex flex-col items-center transform transition hover:scale-110 p-4 rounded-lg bg-white/20 backdrop-blur-lg shadow-lg">
-                <img src="python-logo.png" alt="Python" class="w-20 h-20 mb-3">
-                <span class="bg-yellow-400/80 px-6 py-3 rounded-lg text-lg text-gray-900 font-semibold shadow-md">Python</span>
-            </div>
+        50% {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
+        }
+        100% {
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
+        }
+    }
+
+    .skill-item {
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
+        animation: glowing 2s infinite alternate;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .skill-item:hover {
+        background-color: rgba(0, 102, 255, 0.3);
+        box-shadow: 0 0 30px rgba(0, 102, 255, 0.9);
+        transform: scale(1.1);
+    }
+</style>
+</section>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes glowing {
+        0% {
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
+        }
+        50% {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.6);
+        }
+        100% {
+            box-shadow: 0 0 10px rgba(0, 102, 255, 0.4);
+        }
+    }
+
+    .skill-item {
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
+        animation: glowing 2s infinite alternate;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .skill-item:hover {
+        background-color: rgba(0, 102, 255, 0.3);
+        box-shadow: 0 0 30px rgba(0, 102, 255, 0.9);
+        transform: scale(1.1);
+    }
+</style>
+
+<section id="skills" class="p-10 text-center bg-gray-900 fade-in">
+    <h3 class="text-4xl font-bold text-white mb-6">Skills</h3>
+    <div class="mt-5 flex flex-wrap justify-center gap-8">
+        <div class="flex flex-col items-center transform p-4 rounded-lg bg-white/20 backdrop-blur-lg shadow-lg skill-item">
+            <img src="html-logo.png" alt="HTML" class="w-20 h-20 mb-3">
+            <span class="bg-red-400/80 px-6 py-3 rounded-lg text-lg text-white font-semibold shadow-md">HTML</span>
         </div>
-    </section>
-    
-    
-    
+        <div class="flex flex-col items-center transform p-4 rounded-lg bg-white/20 backdrop-blur-lg shadow-lg skill-item">
+            <img src="css-logo.png" alt="CSS" class="w-20 h-20 mb-3">
+            <span class="bg-blue-400/80 px-6 py-3 rounded-lg text-lg text-white font-semibold shadow-md">CSS</span>
+        </div>
+        <div class="flex flex-col items-center transform p-4 rounded-lg bg-white/20 backdrop-blur-lg shadow-lg skill-item">
+            <img src="python-logo.png" alt="Python" class="w-20 h-20 mb-3">
+            <span class="bg-yellow-400/80 px-6 py-3 rounded-lg text-lg text-gray-900 font-semibold shadow-md">Python</span>
+        </div>
+    </div>
+</section>
     <section id="projects" class="p-10 text-center fade-in">
         <h3 class="text-3xl font-semibold">Projects</h3>
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -375,111 +462,128 @@ document.addEventListener("DOMContentLoaded", function () {
     </section>
 
     <section id="inspirations" class="p-10 text-center bg-gray-800 fade-in">
-        <h3 class="text-3xl font-semibold">Inspirations & Interests</h3>
+        <h3 class="text-3xl font-bold tracking-wide">Inspirations & Interests</h3>
         <p class="text-gray-400 mt-3 max-w-xl mx-auto">I am passionate about technology and always eager to explore new innovations. Here are some of the things that inspire me in my journey:</p>
         <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-gray-700 p-5 rounded-lg hover-effect">
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
                 <h4 class="text-xl font-bold">Artificial Intelligence</h4>
                 <p class="text-gray-400 text-sm">I am fascinated by AI and how it can transform our daily lives.</p>
             </div>
-            <div class="bg-gray-700 p-5 rounded-lg hover-effect">
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
                 <h4 class="text-xl font-bold">Web Development</h4>
                 <p class="text-gray-400 text-sm">Creating interactive and user-friendly web applications excites me.</p>
             </div>
-            <div class="bg-gray-700 p-5 rounded-lg hover-effect">
+            <div class="bg-gray-700 p-6 rounded-2xl shadow-lg transition-all duration-500 transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
                 <h4 class="text-xl font-bold">Arduino & IoT</h4>
                 <p class="text-gray-400 text-sm">I love experimenting with sensors and automation using Arduino.</p>
             </div>
         </div>
     </section>
+    
+    <style>
+        .hover-effect {
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+        }
+        .hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 198, 255, 0.6);
+        }
+    </style>
+    
 
     <section id="contact" class="p-10 flex justify-center fade-in">
-        <div class="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-lg text-white text-center transition duration-300 hover:scale-105 hover:shadow-2xl hover:border hover:border-blue-500">
-            <h3 class="text-3xl font-semibold mb-4">Contact Me</h3>
-            <p class="text-gray-300 text-lg mb-6">Feel free to reach out!</p>
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-xl w-full max-w-lg text-white text-center transition-all duration-500 transform hover:scale-105 hover:shadow-2xl border border-transparent hover:border-blue-500">
+            <h3 class="text-3xl font-bold mb-4 tracking-wide">Contact Me</h3>
+            <p class="text-gray-400 text-lg mb-6">Feel free to reach out!</p>
     
             <div class="space-y-5">
                 <p class="text-lg sm:text-sm flex items-center justify-center space-x-3 group">
-                    <img src="email-icon.png" alt="Email" class="icon w-7 h-7 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:rotate-6">
-                    <a href="mailto:rndialfris20@gmail.com" class="contact-link text-animated">
-                        <span class="hover:text-blue-400 transition-colors duration-300">rndialfris</span>
-                    </a>
+                    <img src="email-icon.png" alt="Email" class="icon">
+                    <a href="mailto:rndialfris20@gmail.com" class="contact-link">rndialfris</a>
                 </p>
                 <p class="text-lg sm:text-sm flex items-center justify-center space-x-3 group">
-                    <img src="tiktok-icon.png" alt="TikTok" class="icon w-7 h-7 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:rotate-6">
-                    <a href="https://www.tiktok.com/@rndialfris" target="_blank" class="contact-link text-animated">
-                        <span class="hover:text-blue-400 transition-colors duration-300">@rndialfris</span>
-                    </a>
+                    <img src="tiktok-icon.png" alt="TikTok" class="icon">
+                    <a href="https://www.tiktok.com/@rndialfris" target="_blank" class="contact-link">rndialfris</a>
                 </p>
                 <p class="text-lg sm:text-sm flex items-center justify-center space-x-3 group">
-                    <img src="instagram-icon.png" alt="Instagram" class="icon w-7 h-7 transition-transform duration-300 ease-in-out group-hover:scale-110 group-hover:rotate-6">
-                    <a href="https://www.instagram.com/rndialfris" target="_blank" class="contact-link text-animated">
-                        <span class="hover:text-blue-400 transition-colors duration-300">@rndialfris</span>
-                    </a>
+                    <img src="instagram-icon.png" alt="Instagram" class="icon">
+                    <a href="https://www.instagram.com/rndialfris" target="_blank" class="contact-link">rndialfris</a>
                 </p>
             </div>
         </div>
     </section>
     
+    <form class="mt-6 space-y-4 max-w-md mx-auto">
+        <input type="text" placeholder="Name" class="input-field" required>
+        <input type="email" placeholder="Email" class="input-field" required>
+        <textarea placeholder="Message" class="input-field resize-none text-sm" rows="3" required></textarea>
     
-
-    <form class="mt-4 space-y-3 max-w-sm mx-auto">
-        <input type="text" placeholder="Name" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
-        <input type="email" placeholder="Email" class="p-2 rounded-lg w-full bg-gray-700 text-white" required>
-        <textarea placeholder="Message" class="p-2 rounded-lg w-full bg-gray-700 text-white resize-none text-sm" rows="2" required></textarea>
-
-        
         <div class="flex justify-center">
-            <button type="submit" class="bg-blue-600 px-4 py-2 rounded-lg text-base font-medium text-white transition 
-            transform hover:scale-105 hover:shadow-lg hover:bg-blue-700">
-                Send
-            </button>
+            <button type="submit" class="btn">Send</button>
         </div>
     </form>
     
-    
-            
-
-
     <style>
         .icon {
-            transition: transform 0.3s ease, opacity 0.3s ease;
+            width: 2rem;
+            height: 2rem;
+            transition: transform 0.4s ease-in-out, opacity 0.3s;
             opacity: 0.8;
         }
-
-        .icon:hover {
-            transform: scale(1.3);
+        .group:hover .icon {
+            transform: scale(1.2) rotate(8deg);
             opacity: 1;
         }
-
-        .icon:active {
-            transform: scale(0.9);
-            opacity: 0.6;
-        }
-
+    
         .contact-link {
-            transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+            font-weight: 500;
             color: white;
-            opacity: 0.8;
+            transition: color 0.3s ease-in-out, transform 0.3s;
+            position: relative;
         }
-
-        .contact-link:hover .icon {
-            transform: scale(1.3);
-            opacity: 1;
+        .contact-link::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #00c6ff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
         }
-
-        .contact-link:hover span {
-            color: #00c6ff; /* Color on hover */
+        .contact-link:hover::after {
+            transform: scaleX(1);
         }
-
-        .text-animated {
-            transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .text-animated:hover {
+        .contact-link:hover {
             color: #00c6ff;
-            opacity: 1;
+        }
+    
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid transparent;
+            color: white;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #00c6ff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+    
+        .btn {
+            background: linear-gradient(90deg, #007BFF, #00c6ff);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: white;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 198, 255, 0.6);
         }
     </style>
 
