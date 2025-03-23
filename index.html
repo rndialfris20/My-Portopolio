@@ -320,41 +320,47 @@ document.addEventListener("DOMContentLoaded", function () {
         I am currently in the process of learning and growing as a developer. Every day, I strive to improve my programming skills and explore new technologies. My goal is to become proficient in multiple programming languages and build impactful projects.
     </p>
     <style>
-    style>
-    .navbar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        padding: 10px 20px;
-        background: rgba(0, 0, 0, 0.7); /* Navbar transparan */
-        backdrop-filter: blur(10px);
-        border-radius: 0 0 10px 10px;
-        z-index: 1000;
-    }
-
-    .download-btn {
-        background-color: #2563eb; /* Warna biru */
-        color: white;
-        padding: 8px 15px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        box-shadow: 0 3px 8px rgba(0, 102, 255, 0.4);
-        display: inline-block;
-    }
-
-    .download-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 12px rgba(0, 102, 255, 0.6);
-    }
-</style>
-
-<!-- Navbar -->
-<nav class="navbar">
-    <a href="cv.pdf" download="Muhammad_Rendi_Alfaris_CV.pdf" class="download-btn">📄 Download CV</a>
-</nav>
+        .download-btn {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            background-color: #2563eb; /* Warna biru */
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 102, 255, 0.3);
+        }
+    
+        .download-btn::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0, 102, 255, 0.8);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease-in-out;
+        }
+    
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 102, 255, 0.5);
+        }
+    
+        .download-btn:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+    
+    <a href="cv.pdf" download="Muhammad_Rendi_Alfaris_CV.pdf" class="download-btn">
+        Download CV
+    </a>
     
 </section>
 
@@ -592,7 +598,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="text-gray-400 mt-3 text-lg">I appreciate your time exploring my portfolio. Feel free to connect with me!</p>
         <div class="mt-5">
             <span class="thank-you-text text-4xl font-bold cursor-pointer">
-                Stay Inspired & Keep Building! 🚀
+                Stay Inspired & Keep Building!
             </span>
         </div>
     </section>
